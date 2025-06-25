@@ -93,7 +93,6 @@ python dicom_viewer.py
 ![DICOM_Attributes](Images/Toggle_Tiles.png)  
 
 
----
 # Video Demonstration of M2D
 https://github.com/user-attachments/assets/48a51d8c-47be-4252-a492-fdf6d51977d7
 
