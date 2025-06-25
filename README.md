@@ -1,116 +1,116 @@
 # DICOM Viewer
-
 ## Overview
-The DICOM Viewer is a desktop application built using Python and PyQt5. It provides functionality for viewing, analyzing, and anonymizing DICOM files with 2D, M2D, or 3D images. The application offers intuitive controls for navigating through DICOM datasets and accessing key metadata.
+
+DICOM Viewer is a desktop application built using Python and PyQt5 for viewing, analyzing, and anonymizing DICOM files. It supports various DICOM formats, offers different image display modes, enables metadata exploration, and includes an anonymization feature. The application is designed to provide an intuitive user interface for healthcare professionals, researchers, or anyone working with medical imaging data.
+---
+## Key Features
+
+1. **Comprehensive File Support**  
+   The application supports all types of DICOM files containing 2D, M2D (multiple 2D images), and 3D images, providing flexibility in the kinds of medical imaging it can handle.
+
+2. **Versatile Image Display Modes**  
+   - **2D Mode**: View single-frame 2D images with clarity.  
+   - **M2D Mode**: For DICOM files containing multiple frames (M2D), the app can display them in a video-like format, showing dynamic sequences.  
+   - **3D Mode**: Supports tile-based visualization, allowing you to navigate slices of a 3D volume, helping you understand complex imaging data.
+
+3. **Metadata Navigation and Search**  
+   - **DICOM Tags Exploration**: View a full list of DICOM tags and their corresponding values, essential for detailed examination of the file.  
+   - **Search DICOM Tags**: Locate specific tags by searching for them, making it easier to find key details.  
+   - **Quick Access to Core DICOM Groups**: The app provides buttons to quickly access critical sections, such as Patient, Study, Modality, Physician, and Image details.
+
+4. **Data Anonymization**  
+   The application features a built-in anonymization tool that replaces sensitive patient information with random values, allowing for secure sharing and processing without compromising privacy.
+
+5. **User-Friendly Interface**  
+   - **Toolbar**: Contains easy-to-use buttons for opening files, exploring tags, playing videos, toggling between tile modes, and anonymizing data.  
+   - **Tile & Scroll Navigation**: Seamlessly navigate through multiple slices or images in grid or scroll views, offering a convenient way to view large datasets or 3D volumes.
 
 ---
-
-## Features
-
-### 1. File Support
-- **Supported Formats**: The application can open any DICOM file containing 2D, M2D, or 3D images.
-
-### 2. Image Display Modes
-- **2D**: Displays single-frame 2D images.
-- **M2D**: If a file contains multiple frames (M2D), it displays the images as a video.
-- **3D**: Allows tile-based visualization of the slices for files containing 3D data.
-
-### 3. Metadata Exploration
-- **Complete DICOM Tags**: Display all DICOM tags present in the file along with their values.
-- **Search Functionality**: Search for a specific DICOM tag and view its value.
-- **Main DICOM Elements**: Provides quick access to the main DICOM groups (Patient, Study, Modality, Physician, and Image) via dedicated buttons in the main UI.
-
-### 4. Anonymization
-- Replace critical patient information with random values prefixed by a user-defined string. This ensures privacy and compliance with data security protocols.
-
-### 5. Intuitive User Interface
-- **Toolbar**: Includes actions for opening files, exploring tags, playing videos, toggling tiles, and anonymizing DICOM files.
-- **Grid and Scroll Area**: Provides a tile-based view for browsing multiple slices within a folder or 3D volume.
-
----
-
-## How to Use
-
-### Opening Files
-1. **Open a Single DICOM File**:
-   - Click the "Open DICOM" button in the toolbar.
-   - Select a DICOM file (.dcm) from your system.
-2. **Open a DICOM Folder**:
-   - Click the "Open DICOM Folder" button in the toolbar.
-   - Select a folder containing DICOM files.
-
-### Viewing Modes
-- **Single Slice View**:
-  - Displays one slice at a time for 2D images.
-- **Video Mode**:
-  - If the file contains multiple frames (M2D), click "Play Video" to toggle video playback.
-- **Tile View**:
-  - For 3D or multi-slice datasets, click "Show Tiles" to view all slices as tiles.
-
-### Metadata Exploration
-- Click "Show Attributes" to view all DICOM tags.
-- Click "Show Details" to explore main DICOM elements (e.g., Patient, Study, etc.).
-- Use the search bar in the attributes window to find specific tags.
-
-### Anonymization
-1. Open a DICOM file or folder.
-2. Click the "Anonymize DICOM" button.
-3. Enter a prefix when prompted. This prefix will be used to generate anonymized values for sensitive tags.
-4. The anonymized file will be saved, overwriting the original.
-
-### Toggle Views
-- Use the "Show Tiles" button to switch between tile and single-slice views.
-
----
-
-### Screenshots
-#### Single Slice View
-![Single Slice View and Attributes Window](Images/1.png)
-
-#### Tile View
-![Tile View](Images/2.png)
-
-## Video Demonstration of M2D
-
-https://github.com/user-attachments/assets/5536912e-8efd-45fe-a155-6757185cdf08
-
 ## Requirements
-- Python 3.6 or later
-- Libraries:
+- **Python 3.6 or later**
+- **Libraries:**
   - PyQt5
   - pydicom
   - matplotlib
   - numpy
 
----
-
-## Project Structure
-- **Main Application**: Includes the GUI components and core logic for the viewer.
-- **Canvas for Display**: Utilizes `matplotlib` for rendering 2D slices and video playback.
-- **Grid Layout**: Manages tile-based visualization for 3D datasets.
-- **Anonymization**: Provides functionality to anonymize critical DICOM tags.
-
----
-
-## Future Enhancements
-- Enhanced 3D visualization capabilities.
-- Integration with machine learning models for advanced analysis.
-- Support for additional DICOM modalities.
-
----
-### Folder Structure
+### Setup
+Install dependencies using pip:
+```bash
+pip install PyQt5 pydicom matplotlib numpy
 ```
-📂 DICOM Viewer
+
+## Launch the Application
+Run the following command in the terminal:
+```bash
+python dicom_viewer.py
+```
+---
+## How to Use
+
+### Opening Files
+#### Open a Single DICOM File:
+1. Click the **"Open DICOM"** button in the toolbar.
+2. Select a DICOM file (.dcm) from your system.
+
+#### Open a DICOM Folder:
+1. Click the **"Open DICOM Folder"** button in the toolbar.
+2. Select a folder containing DICOM files.
+
+### Viewing Modes
+#### Single Slice View:
+- Displays one slice at a time for 2D images.
+
+#### Video Mode:
+- If the file contains multiple frames (M2D), click **"Play Video"** to toggle video playback.
+
+#### Tile View:
+- For 3D or multi-slice datasets, click **"Show Tiles"** to view all slices as tiles.
+
+### Metadata Exploration
+- Click **"Show Attributes"** to view all DICOM tags.
+- Click **"Show Details"** to explore main DICOM elements (e.g., Patient, Study, etc.).
+- Use the **search bar** in the attributes window to find specific tags.
+
+### Anonymization
+1. Open a DICOM file or folder.
+2. Click the **"Anonymize DICOM"** button.
+3. Enter a prefix when prompted. This prefix will be used to generate anonymized values for sensitive tags.
+4. The anonymized file will be saved, overwriting the original.
+
+### Toggle Views
+- Use the **"Show Tiles"** button to switch between tile and single-slice views
+
+---
+# Screenshots
+
+## DICOM_Attributes 
+
+![DICOM_Attributes](Images/DICOM_Attributes.png)  
+
+## Toggle_Tiles
+
+![DICOM_Attributes](Images/Toggle_Tiles.png)  
+
+
+---
+# videos
+
+[![Quantum Molecular Imaging Device](3DIM.png)](https://drive.google.com/file/d/1Y8FHHkb16tyYth9BoHiIQ6izWYsNtv42/view?usp=drive_link)
+
+## Folder Structure
+```plaintext
+📂 DICOM_Viewer
 ├── 📂 src
-│   ├── fullversion.py       # Entry point of the application
+│   ├── dicom_viewer.py       # Entry point of the application
 ├── 📂 Icons          # Icons, styles, and other assets
-├── 📂 data_example    # The data shown in screenshots
+├── 📂 data    # The data shown in screenshots
 └── README.md         # This file
 ```
 
+
 ## Acknowledgments
-Special thanks to Dr.Tamer Basha, whose guidance and expertise have been invaluable in the development of this project. We deeply appreciate your support and insightful feedback, which have significantly enhanced the application's design and functionality.
+Special thanks to **Dr. Tamer Basha**, whose guidance and expertise have been invaluable in the development of this project. We deeply appreciate your support and insightful feedback, which have significantly enhanced the application's design and functionality.
 
-Additionally, thanks to the open-source community for providing tools and libraries that made this project possible.
-
+Additionally, thanks to the **open-source community** for providing tools and libraries that made this project possible.
 
