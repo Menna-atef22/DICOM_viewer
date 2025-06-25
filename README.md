@@ -94,9 +94,10 @@ python dicom_viewer.py
 
 
 ---
-# videos
+# Video Demonstration of M2D
+https://github.com/user-attachments/assets/48a51d8c-47be-4252-a492-fdf6d51977d7
 
-[![Quantum Molecular Imaging Device](3DIM.png)](https://drive.google.com/file/d/1Y8FHHkb16tyYth9BoHiIQ6izWYsNtv42/view?usp=drive_link)
+
 
 ## Folder Structure
 ```plaintext
